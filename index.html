@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Cashly</title>
+  </head>
+  <body>
+    <main>
+      <header class="section">
+        <div class="container header-container">
+          <p class="balance-label">Total Balance</p>
+          <h1 class="total-balance">$2,827.50</h1>
+          <div class="stats-wrapper">
+            <div class="income-wrapper">
+              <p class="stat-label positive-text">Income</p>
+              <p class="income-value">$3,350.00</p>
+            </div>
+            <div class="expenses-wrapper">
+              <p class="stat-label negative-text">Expenses</p>
+              <p class="expenses-value">$3,350.00</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="spending-overview section">
+        <div class="container spending-overview-container">
+          <h2 class="spending-overview-title">Spending overview</h2>
+          <div class="spending-overview-wrapper">
+            <div class="cirlce-diagram-wrapper"></div>
+            <ul class="category-list"></ul>
+          </div>
+        </div>
+      </section>
+      <section class="history section">
+        <div class="container history-container">
+          <h2 class="history-title">Recent Transactions</h2>
+          <ul class="history-list">
+            <li class="history-item">
+              <div class="history-item-wrapper">
+                <h3 class="history-item-title">Food</h3>
+                <p class="history-item-description">Grocery shopping</p>
+              </div>
+              <p class="history-item-amount expenses-value">-$42.50</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-nav">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <a href="" class="nav-link">
+                <svg class="footer-nav-icon" width="24" height="24">
+                  <use href="./icons/icons.svg#icon-home"></use>
+                </svg>
+                Home
+              </a>
+            </li>
+
+            <li class="footer-nav-item">
+              <a href="" class="nav-link">
+                <svg class="footer-nav-icon" width="24" height="24">
+                  <use href="./icons/icons.svg#icon-plus"></use>
+                </svg>
+                Add
+              </a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="" class="nav-link">
+                <svg class="footer-nav-icon" width="24" height="24">
+                  <use href="./icons/icons.svg#icon-settings"></use>
+                </svg>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
