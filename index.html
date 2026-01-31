@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
@@ -26,11 +26,17 @@
           <p class="balance-label">Total Balance</p>
           <h1 class="total-balance">$2,827.50</h1>
           <div class="stats-wrapper">
-            <div class="income-wrapper">
+            <div class="cashflow-wrapper income-wrapper">
+              <svg class="income-icon" width="24" height="24">
+                <use href="./icons/icons.svg#icon-arrow-up"></use>
+              </svg>
               <p class="stat-label positive-text">Income</p>
               <p class="income-value">$3,350.00</p>
             </div>
-            <div class="expenses-wrapper">
+            <div class="cashflow-wrapper expenses-wrapper">
+              <svg class="expenses-icon" width="24" height="24">
+                <use href="./icons/icons.svg#icon-arrow-down"></use>
+              </svg>
               <p class="stat-label negative-text">Expenses</p>
               <p class="expenses-value">$3,350.00</p>
             </div>
@@ -49,7 +55,7 @@
       <section class="history section">
         <div class="container history-container">
           <h2 class="history-title">Recent Transactions</h2>
-          <ul class="history-list">
+          <ul class="history-list" id="historyList">
             <li class="history-item">
               <div class="history-item-wrapper">
                 <h3 class="history-item-title">Food</h3>
@@ -67,33 +73,44 @@
           <ul class="footer-nav-list">
             <li class="footer-nav-item">
               <a href="" class="nav-link">
-                <svg class="footer-nav-icon" width="24" height="24">
+                <svg class="footer-nav-icon active" width="24" height="24">
                   <use href="./icons/icons.svg#icon-home"></use>
                 </svg>
-                Home
+                <!-- Home -->
               </a>
             </li>
 
             <li class="footer-nav-item">
-              <a href="" class="nav-link">
+              <button id="addBtn" type="button" class="nav-link">
                 <svg class="footer-nav-icon" width="24" height="24">
                   <use href="./icons/icons.svg#icon-plus"></use>
                 </svg>
-                Add
-              </a>
+                <!-- Add -->
+              </button>
             </li>
             <li class="footer-nav-item">
               <a href="" class="nav-link">
                 <svg class="footer-nav-icon" width="24" height="24">
-                  <use href="./icons/icons.svg#icon-settings"></use>
+                  <use href="./icons/icons.svg#icon-gear"></use>
                 </svg>
-                Settings
+                <!-- Settings -->
               </a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
+
+    <div class="backdrop" id="modalBackdrop">
+      <div class="modal">
+        <button class="modal-btn-close">
+          <svg class="modal-btn-close-item" width="24" height="24">
+            <use href="./icons/icons.svg#"></use>
+          </svg>
+        </button>
+        <h2>Add Transaction</h2>
+      </div>
+    </div>
 
     <script src="./script.js" type="module"></script>
   </body>
