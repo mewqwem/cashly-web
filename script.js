@@ -1,14 +1,26 @@
 "use strict";
 
-const btnAdd = document.getElementById("addBtn");
-const modalWindow = document.getElementById("modalBackdrop");
+//! MODAL CLOSE/OPEN LOGIC
 
-btnAdd.onclick = () => {
-  modalWindow.classList.toggle("is-open");
+const btnAdd = document.getElementById("addBtn");
+const modalBackdrop = document.getElementById("modalBackdrop");
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+const closeModal = () => {
+  modalBackdrop.classList.remove("is-open");
+  document.body.style.overflow = "";
 };
 
-modalWindow.onclick = (event) => {
-  if (event.target === modalWindow) {
-    modalWindow.classList.remove("is-open");
+btnAdd.onclick = () => {
+  modalBackdrop.classList.toggle("is-open");
+
+  document.body.style.overflow = "hidden";
+};
+
+closeModalBtn.onclick = closeModal;
+
+modalBackdrop.onclick = (event) => {
+  if (event.target === modalBackdrop) {
+    closeModal();
   }
 };
