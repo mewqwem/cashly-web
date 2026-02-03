@@ -1,6 +1,8 @@
 "use strict";
 
 let transactions = [];
+let transactionsIncome = [];
+let transactionsExpenses = [];
 
 function saveToLocalStorage() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
@@ -52,11 +54,22 @@ addButtonTransaction.onclick = function () {
 
 function updateBalance() {
   const balanceElement = document.getElementById("totalBalance");
+  const balanceIncome = document.querySelector(".income-value");
+  const balanceExpense = document.querySelector(".expenses-value");
 
-  const total = transactions.reduce((acc, item) => {
-    return item.type === "income" ? acc + item.amount : acc - item.amount;
-  }, 0);
+  const totalIncome = transactions
+    .filter((item) => item.type === "income")
+    .reduce((acc, item) => acc + item.amount, 0);
+
+  const totalExpense = transactions
+    .filter((item) => item.type === "expenses")
+    .reduce((acc, item) => acc + item.amount, 0);
+
+  const total = totalIncome - totalExpense;
+
   balanceElement.textContent = `${total >= 0 ? "$" : "-$"}${Math.abs(total).toFixed(2)}`;
+  balanceIncome.textContent = `$${totalIncome.toFixed(2)}`;
+  balanceExpense.textContent = `$${totalExpense.toFixed(2)}`;
 }
 
 function collectFormData() {

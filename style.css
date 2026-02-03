@@ -7,7 +7,14 @@
 body {
   font-family: "Ubuntu", sans-serif;
   color: #ffffff;
-  background-color: #101024;
+
+  background: #090979;
+  background: linear-gradient(
+    90deg,
+    rgb(6, 6, 78) 0%,
+    rgba(2, 0, 36, 1) 50%,
+    rgba(6, 6, 78) 100%
+  );
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -30,11 +37,14 @@ img {
 main {
   margin-bottom: 58px;
 }
-.container {
+.container:not(.footer-container) {
   min-width: 260px;
   max-width: 320px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.137);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 .section {
   padding: 32px 0;
